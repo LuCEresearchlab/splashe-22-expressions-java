@@ -1,0 +1,19 @@
+# Bazel
+bazel-*
+
+# Eclipse / VSCode
+.project
+.settings/
+/*/.classpath/
+/.vscode
+
+# Idea
+*.iml
+/.idea
+/.ijwb
+
+# Other
+.DS_Store
+
+# Local testing files
+.local/

@@ -1,0 +1,39 @@
+﻿JLS-link,chapter name,jdt
+jls-15.html#jls-15.8.1,Lexical Literals,BooleanLiteral
+jls-15.html#jls-15.8.1,Lexical Literals,CharacterLiteral
+jls-15.html#jls-15.8.1,Lexical Literals,NullLiteral
+jls-15.html#jls-15.8.1,Lexical Literals,NumberLiteral
+jls-15.html#jls-15.8.1,Lexical Literals,StringLiteral
+jls-15.html#jls-15.8.2,Class Literals,TypeLiteral
+jls-15.html#jls-15.8.3,this,ThisExpression
+jls-15.html#jls-15.8.4,Qualified this,ThisExpression
+jls-15.html#jls-15.8.5,Parenthesized Expressions,ParenthesizedExpression
+jls-15.html#jls-15.9,Class Instance Creation Expressions,ClassInstanceCreation
+jls-15.html#jls-15.10.1,Array Creation Expressions,ArrayCreation
+jls-15.html#jls-15.10.1,Array Creation Expressions,ArrayInitializer
+jls-15.html#jls-15.10.3,Array Access Expressions,ArrayAccess
+jls-15.html#jls-15.11.1,Field Access Using a Primary,FieldAccess
+jls-15.html#jls-15.11.2,Accessing Superclass Members using super,SuperFieldAccess
+jls-15.html#jls-15.12,Method Invocation Expressions,MethodInvocation
+jls-15.html#jls-15.12,Method Invocation Expressions,SuperMethodInvocation
+jls-15.html#jls-15.13,Method Reference Expressions,CreationReference
+jls-15.html#jls-15.13,Method Reference Expressions,ExpressionMethodReference
+jls-15.html#jls-15.13,Method Reference Expressions,SuperMethodReference
+jls-15.html#jls-15.13,Method Reference Expressions,TypeMethodReference
+jls-15.html#jls-15.14,Postfix Expressions,PostfixExpression
+jls-15.html#jls-15.15,Unary Operators,PrefixExpression
+jls-15.html#jls-15.16,Cast Expressions,CastExpression
+jls-15.html#jls-15.17,Multiplicative Operators,InfixExpression
+jls-15.html#jls-15.18,Additive Operators,InfixExpression
+jls-15.html#jls-15.19,Shift Operators,InfixExpression
+jls-15.html#jls-15.20.1,"Numerical Comparison Operators <, <=, >, and >=",InfixExpression
+jls-15.html#jls-15.20.2,Type Comparison Operator instanceof,InstanceofExpression
+jls-15.html#jls-15.21,Equality Operators,InfixExpression
+jls-15.html#jls-15.22,Bitwise and Logical Operators,InfixExpression
+jls-15.html#jls-15.23,Conditional-And Operator &&,InfixExpression
+jls-15.html#jls-15.24,Conditional-Or Operator ||,InfixExpression
+jls-15.html#jls-15.25,Conditional Operator ? :,ConditionalExpression
+jls-15.html#jls-15.26,Assignment Operators,Assignment
+jls-15.html#jls-15.27,Lambda Expressions,LambdaExpression
+jls-6.html#jls-6.5.6.1,Simple Expression Names,SimpleName
+jls-6.html#jls-6.5.6.2,Qualified Expression Names,QualifiedName

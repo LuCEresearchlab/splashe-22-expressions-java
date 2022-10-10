@@ -1,0 +1,15 @@
+annotationTypeDeclaration
+annotationTypeBody
+annotationTypeMemberDeclaration
+annotationTypeElementDeclaration
+annotationTypeElementModifier
+defaultValue
+annotation
+normalAnnotation
+elementValuePairList
+elementValuePair
+elementValue
+elementValueArrayInitializer
+elementValueList
+markerAnnotation
+singleElementAnnotation

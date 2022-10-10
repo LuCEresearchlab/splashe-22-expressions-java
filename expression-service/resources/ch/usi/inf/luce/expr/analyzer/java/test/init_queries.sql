@@ -1,0 +1,3 @@
+CREATE TABLE filestats (filename TEXT PRIMARY KEY, compiles INTEGER, chars INTEGER, tokens INTEGER, classes INTEGER, methods INTEGER, nodes INTEGER);
+CREATE TABLE exprstats (filename TEXT, path_expr TEXT, path_expr_root TEXT, ast_node TEXT, declaring_node TEXT, depth INTEGER, chars INTEGER, tokens INTEGER, PRIMARY KEY (filename, path_expr));
+CREATE TABLE projects (project_path TEXT, filename TEXT PRIMARY KEY);

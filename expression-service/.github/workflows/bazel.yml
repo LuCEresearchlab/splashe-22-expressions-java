@@ -1,0 +1,37 @@
+name: Bazel CI
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'docs/**'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'docs/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Project checkout
+        uses: actions/checkout@v2
+      - name: Bazel cache
+        uses: actions/cache@v2.1.4
+        env:
+          cache-name: bazel-cache
+        with:
+          path: |
+            ~/.cache/bazelisk
+            ~/.cache/bazel
+          key: ${{ runner.os }}-${{ env.cache-name }}
+      - name: Build
+        run: |
+          bazelisk build //...
+      - name: Test
+        run: |
+          bazelisk test //...

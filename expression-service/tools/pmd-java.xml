@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Java PMD rules for expression-service
+    </description>
+
+    <!-- Allow more than longer javadocs -->
+    <rule ref="category/java/documentation.xml/CommentSize">
+        <properties>
+            <property name="maxLines" value="15" />
+            <property name="maxLineLength" value="80" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/errorprone.xml">
+        <exclude name="BeanMembersShouldSerialize"/>
+        <!-- Already handled, but compiler can't understand -->
+        <exclude name="CloseResource"/>
+        <!-- Useless to us -->
+        <exclude name="MissingSerialVersionUID"/>
+    </rule>
+
+    <!-- Allow certain "magic" numbers (-1, 0 and 1) -->
+    <rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition">
+        <properties>
+            <property name="ignoreMagicNumbers" value="-1,0,1" />
+            <property name="ignoreExpressions" value="true" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/bestpractices.xml">
+        <exclude name="JUnitAssertionsShouldIncludeMessage" />
+        <!-- We always end up suppressing this -->
+        <exclude name="UseVarargs" />
+    </rule>
+
+    <!-- TODO: re-enable later -->
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="AtLeastOneConstructor" />
+        <exclude name="ClassNamingConventions" />
+        <exclude name="LongVariable" />
+        <exclude name="MethodArgumentCouldBeFinal" />
+        <exclude name="OnlyOneReturn" />
+        <!-- For "for (int i = 0;" and other short words -->
+        <exclude name="ShortClassName" />
+        <exclude name="ShortVariable" />
+        <!-- Yields false positives that are actually required -->
+        <exclude name="UselessParentheses" />
+    </rule>
+
+    <rule ref="category/java/design.xml">
+        <!-- (Immutable) Data classes are not evil -->
+        <exclude name="DataClass" />
+        <!-- Breaks .stream() chains -->
+        <exclude name="LawOfDemeter" />
+        <!-- Unused: LoosePackageCoupling: No packages or classes specified -->
+        <exclude name="LoosePackageCoupling" />
+    </rule>
+
+    <rule ref="category/java/design.xml/CognitiveComplexity">
+        <properties>
+            <!--
+                There are multiple instances in which we have to deal with
+                a large number of different types of variable instances,
+                so we'll end up having methods with high cognitive
+                complexity according to how this metric is computed.
+            -->
+            <property name="reportLevel" value="20" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/documentation.xml">
+        <exclude name="CommentContent" />
+        <!-- Forces to write comments for things that are
+             self-explanatory or already documented elsewhere -->
+        <exclude name="CommentRequired" />
+    </rule>
+
+    <!-- We don't have multithreading
+    <rule ref="category/java/multithreading.xml" />
+    -->
+
+    <rule ref="category/java/performance.xml" />
+</ruleset>

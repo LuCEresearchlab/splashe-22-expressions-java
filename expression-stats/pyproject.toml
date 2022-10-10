@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "expression-stats"
+version = "0.1.0"
+description = ""
+authors = ["Luca Chiodini <luca@chiodini.org>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+SQLAlchemy = "^1.4.35"
+mysql-connector-python = "^8.0.28"
+tqdm = "^4.64.0"
+Fabric = "^2.7.0"
+typer = "^0.4.1"
+python-dotenv = "^0.20.0"
+scipy = "^1.8.1"
+seaborn = "^0.11.2"
+backoff = "^2.1.2"
+numpy = "^1.23.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+pyright = "^1.1.247"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black" 

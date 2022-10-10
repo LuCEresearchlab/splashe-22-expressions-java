@@ -1,0 +1,966 @@
+[
+  {
+    "group": "Array",
+    "constructName": "Array Access Expression",
+    "description": "Array access",
+    "reference": "jls-15.html#jls-15.10.3",
+    "example": "int[] a = new int[1]; int v = a[0];",
+    "expressionIndex": 1,
+    "expressionNode": "ArrayAccess",
+    "expressionTokens": 4,
+    "tags": "Array"
+  },
+  {
+    "group": "Array",
+    "constructName": "Array Instance Creation Expression",
+    "description": "Array creation",
+    "reference": "jls-15.html#jls-15.10.1",
+    "example": "int[][] a = new int[2][3];",
+    "expressionNode": "ArrayCreation",
+    "expressionTokens": 8,
+    "tags": "Array,Allocation"
+  },
+  {
+    "group": "Array",
+    "constructName": "Array Instance Creation Expression",
+    "description": "Array creation without dimensions and empty initializer",
+    "reference": "jls-15.html#jls-15.10.1",
+    "example": "int[] a = new int[] {};",
+    "expressionNode": "ArrayCreation",
+    "expressionTokens": 6,
+    "tags": "Array,Allocation"
+  },
+  {
+    "group": "Array",
+    "constructName": "Array Instance Creation Expression",
+    "description": "Array creation with initializer but without dimensions",
+    "reference": "jls-15.html#jls-15.10.1",
+    "example": "int[] a = new int[] {1};",
+    "expressionNode": "ArrayCreation",
+    "expressionTokens": 7,
+    "tags": "Array,Allocation"
+  },
+  {
+    "group": "Array",
+    "constructName": "Array Instance Creation Expression",
+    "description": "Array creation with initializer",
+    "reference": "jls-15.html#jls-15.10.1",
+    "example": "int[][] a = new int[][] { {3}, {4} };",
+    "expressionNode": "ArrayCreation",
+    "expressionTokens": 9,
+    "tags": "Array,Allocation"
+  },
+  {
+    "group": "Assignment",
+    "constructName": "Assignment Expression",
+    "description": "Simple assignment expression",
+    "reference": "jls-15.html#jls-15.26.1",
+    "example": "int a; a = 42;",
+    "expressionNode": "Assignment",
+    "expressionTokens": 3,
+    "tags": "Assignment,Operator"
+  },
+  {
+    "group": "Assignment",
+    "constructName": "Compound Assignment Expression",
+    "description": "Compound assignment expression",
+    "reference": "jls-15.html#jls-15.26.2",
+    "example": "int a = 1; a += 2;",
+    "expressionNode": "Assignment",
+    "expressionIndex": 1,
+    "expressionTokens": 3,
+    "tags": "Assignment,Operator"
+  },
+  {
+    "group": "Literal",
+    "constructName": "Boolean Literal",
+    "description": "Boolean literal",
+    "reference": "jls-3.html#jls-3.10.3",
+    "example": "boolean a = true;",
+    "expressionNode": "BooleanLiteral",
+    "expressionTokens": 1,
+    "tags": "Boolean,Literal"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Cast Expression",
+    "description": "Cast expression",
+    "reference": "jls-15.html#jls-15.16",
+    "example": "float a = (float) 10;",
+    "expressionNode": "CastExpression",
+    "expressionTokens": 4,
+    "tags": "Type,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Cast Expression",
+    "description": "Cast expression of cast expression",
+    "reference": "jls-15.html#jls-15.16",
+    "example": "float a = (float) (double) 10;",
+    "expressionNode": "CastExpression",
+    "expressionTokens": 7,
+    "tags": "Type,Operator"
+  },
+  {
+    "group": "Literal",
+    "constructName": "Character Literal",
+    "description": "Charcter literal",
+    "reference": "jls-3.html#jls-3.10.4",
+    "example": "char a = 'c';",
+    "expressionNode": "CharacterLiteral",
+    "expressionTokens": 1,
+    "tags": "Literal"
+  },
+  
+  
+  {
+    "group": "Class Instance Creation",
+    "constructName": "Class Instance Creation Expression",
+    "description": "Class instance creation with argument",
+    "reference": "jls-15.html#jls-15.9",
+    "example": "String a = new String(\"LuCE\");",
+    "expressionNode": "ClassInstanceCreation",
+    "expressionTokens": 5,
+    "tags": "Class,Allocation,Constructor"
+  },
+  {
+    "group": "Class Instance Creation",
+    "constructName": "Class Instance Creation Expression",
+    "description": "Class instance creation without arguments",
+    "reference": "jls-15.html#jls-15.9",
+    "example": "String a = new String();",
+    "expressionNode": "ClassInstanceCreation",
+    "expressionTokens": 4,
+    "tags": "Class,Allocation,Constructor"
+  },
+  {
+    "group": "Class Instance Creation",
+    "constructName": "Class Instance Creation Expression",
+    "description": "Generic class instance creation",
+    "reference": "jls-15.html#jls-15.9",
+    "example": "java.util.List<java.util.List<String>> l = new java.util.ArrayList<java.util.List<String>>();",
+    "expressionNode": "ClassInstanceCreation",
+    "expressionTokens": 17,
+    "tags": "Class,Allocation,Constructor,Polymorphism"
+  },
+  {
+    "group": "Class Instance Creation",
+    "constructName": "Class Instance Creation Expression",
+    "description": "Generic class instance creation with multiple type arguments",
+    "reference": "jls-15.html#jls-15.9",
+    "example": "java.util.Map<String, String> m = new java.util.HashMap<String, String>();",
+    "expressionNode": "ClassInstanceCreation",
+    "expressionTokens": 13,
+    "tags": "Class,Allocation,Constructor,Polymorphism"
+  },
+  {
+    "group": "Class Instance Creation",
+    "constructName": "Class Instance Creation Expression",
+    "description": "Qualified class instance creation",
+    "reference": "jls-15.html#jls-15.9",
+    "example": "class Outer { class Inner {} }   class Other { Outer.Inner i = new Outer().new Inner(); }",
+    "expressionNode": "ClassInstanceCreation",
+    "expressionTokens": 9,
+    "tags": "Class,Allocation,Constructor"
+  },
+  {
+    "group": "Class Instance Creation",
+    "constructName": "Class Instance Creation Expression",
+    "description": "Anonymous-class instance creation",
+    "reference": "jls-15.html#jls-15.9",
+    "example": "Object o = new Object(){ int m() { return 1 + 2;} };",
+    "expressionNode": "ClassInstanceCreation",
+    "expressionTokens": 4,
+    "tags": "Class,Allocation,Constructor,Object"
+  },
+  {
+    "group": "Method Invocation",
+    "constructName": "Method Invocation Expression",
+    "description": "Method invocation on anonymous-class instance",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "String s = new Object(){ int m() { return 1 + 2;} }.toString();",
+    "expressionNode": "MethodInvocation",
+    "expressionTokens": 8,
+    "tags": "Class,Allocation,Constructor,Method,Call"
+  },
+ 
+
+  {
+    "group": "Literal",
+    "constructName": "Class Literal",
+    "description": "Class literal",
+    "reference": "jls-15.html#jls-15.8.2",
+    "example": "Class<String> a = String.class;",
+    "expressionNode": "TypeLiteral",
+    "expressionTokens": 3,
+    "tags": "Type,Literal"
+  },
+  {
+    "group": "Literal",
+    "constructName": "Class Literal",
+    "description": "Class literal with void",
+    "reference": "jls-15.html#jls-15.8.2",
+    "example": "Class<Void> a = void.class;",
+    "expressionNode": "TypeLiteral",
+    "expressionTokens": 3,
+    "tags": "Type,Literal"
+  },
+
+
+  {
+    "group": "Operator",
+    "constructName": "Conditional Expression",
+    "description": "Conditional expression",
+    "reference": "jls-15.html#jls-15.25",
+    "example": "int a = true ? 1 : 0;",
+    "expressionNode": "ConditionalExpression",
+    "expressionTokens": 5,
+    "tags": "Conditional,Operator"
+  },
+
+
+  {
+    "group": "Method Reference",
+    "constructName": "Method Reference Expression",
+    "description": "Instance creation reference expression",
+    "reference": "jls-15.html#jls-15.13",
+    "example": "java.util.function.Supplier<Object> s = Object::new;",
+    "expressionNode": "CreationReference",
+    "expressionTokens": 3,
+    "tags": "Method,Allocation"
+  },
+  {
+    "group": "Method Reference",
+    "constructName": "Method Reference Expression",
+    "description": "Method reference expression",
+    "reference": "jls-15.html#jls-15.13",
+    "example": "java.util.function.Supplier<Integer> s = new Object()::hashCode;",
+    "expressionNode": "ExpressionMethodReference",
+    "expressionTokens": 6,
+    "tags": "Method,Object"
+  },
+  {
+    "group": "Method Reference",
+    "constructName": "Method Reference Expression",
+    "description": "Method reference expression with generics",
+    "reference": "jls-15.html#jls-15.13",
+    "example": "class C { public <T> void m(java.util.List<T> l) {} }; java.util.function.Consumer<java.util.List<java.util.List<String>>> c = new C()::<java.util.List<String>>m;",
+    "expressionNode": "ExpressionMethodReference",
+    "expressionTokens": 15,
+    "tags": "Method,Object,Polymorphism"
+  },
+  {
+    "group": "Method Reference",
+    "constructName": "Method Reference Expression",
+    "description": "Method reference expression on a type",
+    "reference": "jls-15.html#jls-15.13",
+    "example": "java.util.function.Function<Double, Double> s = Math::sqrt;",
+    "expressionNode": "ExpressionMethodReference",
+    "expressionTokens": 3,
+    "tags": "Method,Object"
+  }, 
+  
+  
+  {
+    "group": "Expression Name",
+    "constructName": "Simple Expression Name",
+    "description": "Instance variable access with simple name",
+    "reference": "jls-6.html#jls-6.5.6.1",
+    "example": "class C { int f; public int m() { return f; } };",
+    "expressionNode": "SimpleName",
+    "expressionTokens": 1,
+    "tags": "Field,Variable"
+  },
+  {
+    "group": "Field Access",
+    "constructName": "Field Access Expression",
+    "description": "Field access",
+    "reference": "jls-15.html#jls-15.11.1",
+    "example": "Object o = new Object() { private int f; public int m() { return this.f; } };",
+    "expressionIndex": 1,
+    "expressionNode": "FieldAccess",
+    "expressionTokens": 3,
+    "tags": "Field,Variable"
+  },
+  {
+    "group": "Field Access",
+    "constructName": "Field Access Expression",
+    "description": "Nested field access",
+    "reference": "jls-15.html#jls-15.11.1",
+    "example": "Object o = new Object() { private Integer f; public int m() { return this.f.MAX_VALUE; } };",
+    "expressionIndex": 1,
+    "expressionNode": "FieldAccess",
+    "expressionTokens": 5,
+    "tags": "Field,Variable"
+  },
+  {
+    "group": "Field Access",
+    "constructName": "Field Access Expression",
+    "description": "Field access on instance of anonymous class",
+    "reference": "jls-15.html#jls-15.11.1",
+    "example": "int v = new Object() { public int f; }.f;",
+    "expressionNode": "FieldAccess",
+    "expressionTokens": 6,
+    "tags": "Field,Variable"
+  },
+  {
+    "group": "Expression Name",
+    "constructName": "Qualified Expression Name",
+    "description": "Field access denoted by Qualified Expression Name",
+    "reference": "jls-6.html#jls-6.5.6.2",
+    "example": "class C { int f; public int m() { C c = new C(); return c.f; } };",
+    "expressionIndex": 1,
+    "expressionNode": "QualifiedName",
+    "expressionTokens": 3,
+    "tags": "Field,Variable"
+  },
+  {
+    "group": "Expression Name",
+    "constructName": "Qualified Expression Name",
+    "description": "Field access denoted by Qualified Expression Name",
+    "reference": "jls-6.html#jls-6.5.6.2",
+    "example": "int v = java.lang.Integer.MAX_VALUE;",
+    "expressionNode": "QualifiedName",
+    "expressionTokens": 7,
+    "tags": "Field,Variable"
+  },
+  {
+    "group": "Expression Name",
+    "constructName": "Qualified Expression Name",
+    "description": "Field access on enum denoted by Qualified Expression Name",
+    "reference": "jls-6.html#jls-6.5.6.2",
+    "example": "java.awt.Component.BaselineResizeBehavior o = java.awt.Component.BaselineResizeBehavior.OTHER;",
+    "expressionNode": "QualifiedName",
+    "expressionTokens": 9,
+    "tags": "Field,Variable"
+  },
+  {
+    "group": "Expression Name",
+    "constructName": "Qualified Expression Name",
+    "description": "Field access on interface denoted by Qualified Expression Name",
+    "reference": "jls-6.html#jls-6.5.6.2",
+    "example": "int v = java.awt.image.ImageObserver.WIDTH;",
+    "expressionNode": "QualifiedName",
+    "expressionTokens": 9,
+    "tags": "Field,Variable"
+  },
+
+  {
+    "group": "Method Invocation",
+    "constructName": "Method Invocation Expression",
+    "description": "Method call on field access using qualified class name",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "String s = java.lang.Integer.TYPE.getName();",
+    "expressionNode": "MethodInvocation",
+    "expressionTokens": 11,
+    "tags": "Field,Method,Call"
+  },
+
+
+  {
+    "group": "Operator",
+    "constructName": "Type Comparison Expression",
+    "description": "Instanceof expression",
+    "reference": "jls-15.html#jls-15.20.2",
+    "example": "boolean a = \"Hi\" instanceof String;",
+    "expressionNode": "InstanceofExpression",
+    "expressionTokens": 3,
+    "tags": "Type,Operator"
+  },
+
+
+  {
+    "group": "Lambda",
+    "constructName": "Lambda Expression",
+    "description": "Lambda expression without parentheses around parameters",
+    "reference": "jls-15.html#jls-15.27",
+    "example": "java.util.function.Function<String, String> a = name -> \"Hi \" + name;",
+    "expressionNode": "LambdaExpression",
+    "expressionTokens": 5,
+    "tags": "Function,Parameter"
+  },
+  {
+    "group": "Lambda",
+    "constructName": "Lambda Expression",
+    "description": "Lambda expression with no parameters and empty block",
+    "reference": "jls-15.html#jls-15.27",
+    "example": "Runnable r = () -> { };",
+    "expressionNode": "LambdaExpression",
+    "expressionTokens": 3,
+    "tags": "Function,Parameter"
+  },
+  {
+    "group": "Lambda",
+    "constructName": "Lambda Expression",
+    "description": "Lambda expression with empty block",
+    "reference": "jls-15.html#jls-15.27",
+    "example": "java.util.function.Consumer<String> a = name -> { };",
+    "expressionNode": "LambdaExpression",
+    "expressionTokens": 2,
+    "tags": "Function,Parameter"
+  },
+  {
+    "group": "Lambda",
+    "constructName": "Lambda Expression",
+    "description": "Lambda expression with block",
+    "reference": "jls-15.html#jls-15.27",
+    "example": "java.util.function.Function<String, String> a = name -> { return \"Hi \" + name; };",
+    "expressionNode": "LambdaExpression",
+    "expressionTokens": 2,
+    "tags": "Function,Parameter"
+  },
+  {
+    "group": "Lambda",
+    "constructName": "Lambda Expression",
+    "description": "Lambda expression",
+    "reference": "jls-15.html#jls-15.27",
+    "example": "java.util.function.Function<String, String> a = (name) -> \"Hi \" + name;",
+    "expressionNode": "LambdaExpression",
+    "expressionTokens": 7,
+    "tags": "Function,Parameter"
+  },
+  {
+    "group": "Lambda",
+    "constructName": "Lambda Expression",
+    "description": "Lambda expression with types",
+    "reference": "jls-15.html#jls-15.27",
+    "example": "java.util.function.BiFunction<String, String, String> a = (String name, String surname) -> name + surname;",
+    "expressionNode": "LambdaExpression",
+    "expressionTokens": 11,
+    "tags": "Function,Parameter,Type"
+  },
+  {
+    "group": "Lambda",
+    "constructName": "Lambda Expression",
+    "description": "Lambda expression with qualified generic types",
+    "reference": "jls-15.html#jls-15.27",
+    "example": "java.util.function.Function<java.util.List<String>, Integer> f = (java.util.List<String> l) -> l.size();",
+    "expressionNode": "LambdaExpression",
+    "expressionTokens": 17,
+    "tags": "Function,Parameter,Type,Polymorphism"
+  },
+
+
+  {
+    "group": "Method Invocation",
+    "constructName": "Method Invocation Expression",
+    "description": "Method invocation on variable",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "java.util.Random r = new java.util.Random(); int d = r.nextInt(1);",
+    "expressionNode": "MethodInvocation",
+    "expressionTokens": 6,
+    "expressionIndex": 1,
+    "tags": "Method,Call"
+  },
+  {
+    "group": "Method Invocation",
+    "constructName": "Method Invocation Expression",
+    "description": "Method invocation on class instance creation expression",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "int d = new java.util.Random().nextInt(1);",
+    "expressionNode": "MethodInvocation",
+    "expressionTokens": 13,
+    "tags": "Class,Allocation,Method,Call"
+  },
+  {
+    "group": "Method Invocation",
+    "constructName": "Method Invocation Expression",
+    "description": "Static method invocation",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "double a = Math.sqrt(1.0);",
+    "expressionNode": "MethodInvocation",
+    "expressionTokens": 6,
+    "tags": "Method,Call,Static"
+  },
+  {
+    "group": "Method Invocation",
+    "constructName": "Method Invocation Expression",
+    "description": "Static method invocation with type arguments",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "java.util.List<String> l = java.util.Collections.<String>emptyList();",
+    "expressionNode": "MethodInvocation",
+    "expressionTokens": 12,
+    "tags": "Method,Call,Static,Polymorphism"
+  },
+  {
+    "group": "Method Invocation",
+    "constructName": "Method Invocation Expression",
+    "description": "Static method invocation on qualified name",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "double a = java.lang.Math.sqrt(1.0);",
+    "expressionNode": "MethodInvocation",
+    "expressionTokens": 10,
+    "tags": "Method,Call,Static"
+  },
+
+
+  {
+    "group": "Literal",
+    "constructName": "Null Literal",
+    "description": "Null literal",
+    "reference": "jls-3.html#jls-3.10.7",
+    "example": "Object o = null;",
+    "expressionNode": "NullLiteral",
+    "expressionTokens": 1,
+    "tags": "Null,Literal"
+  },
+  {
+    "group": "Literal",
+    "constructName": "Integer Literal",
+    "description": "Integer literal",
+    "reference": "jls-3.html#jls-3.10.1",
+    "example": "int v = 42;",
+    "expressionNode": "NumberLiteral",
+    "expressionTokens": 1,
+    "tags": "Number,Literal"
+  },
+  {
+    "group": "Literal",
+    "constructName": "Floating-Point Literal",
+    "description": "Floating-point literal",
+    "reference": "jls-3.html#jls-3.10.2",
+    "example": "double v = 3.14;",
+    "expressionNode": "NumberLiteral",
+    "expressionTokens": 1,
+    "tags": "Number,Literal"
+  },
+
+
+  {
+    "group": "Literal",
+    "constructName": "String Literal",
+    "description": "String literal",
+    "reference": "jls-3.html#jls-3.10.5",
+    "example": "String a = \"Hello world\";",
+    "expressionNode": "StringLiteral",
+    "expressionTokens": 1,
+    "tags": "String,Literal"
+  },
+  {
+    "group": "Literal",
+    "constructName": "String Literal",
+    "description": "String literal with quotes inside",
+    "reference": "jls-3.html#jls-3.10.5",
+    "example": "String a = \"Hello \\\"John\\\"\";",
+    "expressionNode": "StringLiteral",
+    "expressionTokens": 1,
+    "tags": "String,Literal"
+  },
+
+
+  {
+    "group": "This",
+    "constructName": "This Expression",
+    "description": "This expression",
+    "reference": "jls-15.html#jls-15.8.3",
+    "example": "Object o = new Object() { void m() { Object o = this; } };",
+    "expressionIndex": 1,
+    "expressionNode": "ThisExpression",
+    "expressionTokens": 1,
+    "tags": "Self"
+  },
+  {
+    "group": "This",
+    "constructName": "Qualified This Expression",
+    "description": "This expression with qualifier",
+    "reference": "jls-15.html#jls-15.8.4",
+    "example": "class Outer { class Inner { Outer o = Outer.this; } }",
+    "expressionNode": "ThisExpression",
+    "expressionTokens": 3,
+    "tags": "Class,Self"
+  },
+
+
+  {
+    "group": "Super",
+    "constructName": "Super Field Access Expression",
+    "description": "Super field access",
+    "reference": "jls-15.html#jls-15.11.2",
+    "example": "class Parent { int f; } class Child extends Parent { int a = super.f; }",
+    "expressionNode": "SuperFieldAccess",
+    "expressionTokens": 3,
+    "tags": "Inheritance,Field"
+  },
+  {
+    "group": "Super",
+    "constructName": "Super Field Access Expression",
+    "description": "Qualified super field access",
+    "reference": "jls-15.html#jls-15.11.2",
+    "example": "class Parent { int f; } class Child extends Parent { class Inner { int a = Child.super.f; } }",
+    "expressionNode": "SuperFieldAccess",
+    "expressionTokens": 5,
+    "tags": "Inheritance,Field"
+  },
+  {
+    "group": "Super",
+    "constructName": "Super Method Invocation Expression",
+    "description": "Super method invocation",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "class Parent { int m() { return 1; } } class Child extends Parent { int a = super.m(); }",
+    "expressionIndex": 1,
+    "expressionNode": "SuperMethodInvocation",
+    "expressionTokens": 5,
+    "tags": "Inheritance,Method,Call"
+  },
+  {
+    "group": "Super",
+    "constructName": "Super Method Invocation Expression",
+    "description": "Super method invocation with arguments",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "class Parent { int m(int x) { return 1; } } class Child extends Parent { int a = super.m(1); }",
+    "expressionIndex": 1,
+    "expressionNode": "SuperMethodInvocation",
+    "expressionTokens": 6,
+    "tags": "Inheritance,Method,Call,Argument"
+  },
+  {
+    "group": "Super",
+    "constructName": "Super Method Invocation Expression",
+    "description": "Super method invocation with type arguments",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "class Parent { <T> java.util.List<T> m() { return null; } } class Child extends Parent { java.util.List<String> a = super.<String>m(); }",
+    "expressionIndex": 1,
+    "expressionNode": "SuperMethodInvocation",
+    "expressionTokens": 8,
+    "tags": "Inheritance,Method,Call,Argument,Type"
+  },
+  {
+    "group": "Super",
+    "constructName": "Super Method Invocation Expression",
+    "description": "Qualified super method invocation",
+    "reference": "jls-15.html#jls-15.12",
+    "example": "class Parent { int m() { return 1; } } class Child extends Parent { class Inner { int a = Child.super.m(); } }",
+    "expressionIndex": 1,
+    "expressionNode": "SuperMethodInvocation",
+    "expressionTokens": 7,
+    "tags": "Inheritance,Method,Call"
+  },
+  {
+    "group": "Method Reference",
+    "constructName": "Super Method Reference Expression",
+    "description": "Super method reference",
+    "reference": "jls-15.html#jls-15.13",
+    "example": "class Parent { <T> java.util.List<T> m() { return null; } } class Child extends Parent { java.util.function.Supplier<java.util.List<Integer>> s = super::<Integer>m; }",
+    "expressionIndex": 1,
+    "expressionNode": "SuperMethodReference",
+    "expressionTokens": 6,
+    "tags": "Inheritance,Method"
+  },
+  {
+    "group": "Method Reference",
+    "constructName": "Super Method Reference Expression",
+    "description": "Qualified super method reference",
+    "reference": "jls-15.html#jls-15.13",
+    "example": "class Parent { void m(int i){} } class Child extends Parent { class Inner { java.util.function.Consumer<Integer> s = Child.super::m; } }",
+    "expressionNode": "SuperMethodReference",
+    "expressionTokens": 5,
+    "tags": "Inheritance,Method"
+  },
+
+
+
+  {
+    "group": "Operator",
+    "constructName": "Postfix Increment Expression",
+    "description": "Postfix increment expression",
+    "reference": "jls-15.html#jls-15.14.2",
+    "example": "int n = 0; int succ = n++;",
+    "expressionIndex": 1,
+    "expressionNode": "PostfixExpression",
+    "expressionTokens": 2,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Postfix Decrement Expression",
+    "description": "Postfix decrement expression",
+    "reference": "jls-15.html#jls-15.14.3",
+    "example": "int n = 0; int pre = n--;",
+    "expressionIndex": 1,
+    "expressionNode": "PostfixExpression",
+    "expressionTokens": 2,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Prefix Increment Expression",
+    "description": "Prefix increment expression",
+    "reference": "jls-15.html#jls-15.15.1",
+    "example": "int a = 42; int n = ++a;",
+    "expressionIndex": 1,
+    "expressionNode": "PrefixExpression",
+    "expressionTokens": 2,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Prefix Decrement Expression",
+    "description": "Prefix decrement expression",
+    "reference": "jls-15.html#jls-15.15.2",
+    "example": "int a = 42; int n = --a;",
+    "expressionIndex": 1,
+    "expressionNode": "PrefixExpression",
+    "expressionTokens": 2,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Unary Plus Expression",
+    "description": "Prefix expression with unary plus",
+    "reference": "jls-15.html#jls-15.15.3",
+    "example": "int a = +42;",
+    "expressionNode": "PrefixExpression",
+    "expressionTokens": 2,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Unary Minus Expression",
+    "description": "Prefix expression with unary minus",
+    "reference": "jls-15.html#jls-15.15.4",
+    "example": "int a = -42;",
+    "expressionNode": "PrefixExpression",
+    "expressionTokens": 2,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Unary Bitwise Complement Expression",
+    "description": "Unary bitwise complement expression",
+    "reference": "jls-15.html#jls-15.15.5",
+    "example": "int comp = ~42;",
+    "expressionNode": "PrefixExpression",
+    "expressionTokens": 2,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Unary Logical Complement Expression",
+    "description": "Unary logical complement expression",
+    "reference": "jls-15.html#jls-15.15.6",
+    "example": "boolean b = !true;",
+    "expressionNode": "PrefixExpression",
+    "expressionTokens": 2,
+    "tags": "Boolean,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Addition Expression",
+    "description": "Infix expression with additions and subtractions",
+    "reference": "jls-15.html#jls-15.18.2",
+    "example": "int a = 1 + 2;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Addition Expression",
+    "description": "Infix expression with addition denoting string concatenation",
+    "reference": "jls-15.html#jls-15.18.1",
+    "example": "String greet = \"Hello \" + \"world\";",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "String,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Addition Expression",
+    "description": "Infix expression with addition denoting string concatenation with just one String operand",
+    "reference": "jls-15.html#jls-15.18.1",
+    "example": "String greet = 42 + \" Hello!\";",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "String,Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Subtraction Expression",
+    "description": "Infix expression with additions and subtractions",
+    "reference": "jls-15.html#jls-15.18.2",
+    "example": "int a = 5 - 6;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Multiplication Expression",
+    "description": "Infix expression with multiplication operator",
+    "reference": "jls-15.html#jls-15.17.1",
+    "example": "int n = 7 * 8;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Division Expression",
+    "description": "Infix expression with division operator",
+    "reference": "jls-15.html#jls-15.17.2",
+    "example": "int q = 15 / 4;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Remainder Expression",
+    "description": "Infix expression with remainder operator",
+    "reference": "jls-15.html#jls-15.17.3",
+    "example": "int r = 15 % 4;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Left Shift Expression",
+    "description": "Infix expression with left shift",
+    "reference": "jls-15.html#jls-15.19",
+    "example": "int v = 1 << 8;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Signed Right Shift Expression",
+    "description": "Infix expression with signed right shift",
+    "reference": "jls-15.html#jls-15.19",
+    "example": "int v = 256 >> 8;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Unsigned Right Shift Expression",
+    "description": "Infix expression with unsigned right shift",
+    "reference": "jls-15.html#jls-15.19",
+    "example": "int v = -256 >>> 16;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 4,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Less-Than Relational Expression",
+    "description": "Infix expression with numerical comparison operator <",
+    "reference": "jls-15.html#jls-15.20.1",
+    "example": "boolean smaller = 1 < 2;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Less-Than-Or-Equal Relational Expression",
+    "description": "Infix expression with numerical comparison operator <=",
+    "reference": "jls-15.html#jls-15.20.1",
+    "example": "boolean smallerOrEqual = 1 <= 2;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Greater-Than Relational Expression",
+    "description": "Infix expression with numerical comparison operator >",
+    "reference": "jls-15.html#jls-15.20.1",
+    "example": "boolean greater = 2 > 1;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Greater-Than-Or-Equal Relational Expression",
+    "description": "Infix expression with numerical comparison operator >=",
+    "reference": "jls-15.html#jls-15.20.1",
+    "example": "boolean greaterOrEqual = 2 >= 1;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Equal-To Expression",
+    "description": "Infix expression with numerical equality operator",
+    "reference": "jls-15.html#jls-15.21",
+    "example": "boolean test = 42 == 42;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator,Number,Equality"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Equal-To Expression",
+    "description": "Infix expression with boolean equality operator",
+    "reference": "jls-15.html#jls-15.21",
+    "example": "boolean test = true == true;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator,Equality"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Not-Equal-To Expression",
+    "description": "Infix expression with reference equality operator",
+    "reference": "jls-15.html#jls-15.21",
+    "example": "boolean test = new Object() != new Object();",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 9,
+    "tags": "Boolean,Operator,Object,Reference,Equality"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Exclusive-Or Expression",
+    "description": "Infix expression with integer bitwise operator",
+    "reference": "jls-15.html#jls-15.22",
+    "example": "int xor = 16 ^ 8;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Number,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "And Expression",
+    "description": "Infix expression with boolean and operator",
+    "reference": "jls-15.html#jls-15.22",
+    "example": "boolean allTrue = false & true;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Inclusive-Or Expression",
+    "description": "Infix expression with boolean or operator",
+    "reference": "jls-15.html#jls-15.22",
+    "example": "boolean oneTrue = false | true;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Conditional-And Expression",
+    "description": "Infix expression with conditional-and operator",
+    "reference": "jls-15.html#jls-15.23",
+    "example": "boolean allTrue = false && true;",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator"
+  },
+  {
+    "group": "Operator",
+    "constructName": "Conditional-Or Expression",
+    "description": "Infix expression with conditional-or operator",
+    "example": "boolean oneTrue = false || true;",
+    "reference": "jls-15.html#jls-15.24",
+    "expressionNode": "InfixExpression",
+    "expressionTokens": 3,
+    "tags": "Boolean,Operator"
+  }
+]
