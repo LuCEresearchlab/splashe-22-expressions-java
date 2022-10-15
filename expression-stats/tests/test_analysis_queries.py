@@ -38,7 +38,7 @@ def test_expr_nodes_per_method(engine: Engine):
             3,  # Calculator.add(int, int)
             3,  # LazyCalculator.LazyCalculator()
             4,  # LazyCalculator.add(int, int)
-            4,  # Hello.m()
+            3,  # Hello.m()
         ],
     )
 
@@ -51,7 +51,7 @@ def test_nodes_per_expr(engine: Engine):
             3,  # "calc = new Calculator()" in LazyCalculator.LazyCalculator()
             4,  # "calc.add(a, b)" in LazyCalculator.add(int, int)
             1,  # ""Hello World"" in Hello
-            4,  # "System.out.println(f) in Hello.m()
+            3,  # "System.out.println(f) in Hello.m()
         ],
     )
 
@@ -64,6 +64,6 @@ def test_tree_height_per_expr(engine: Engine):
             1,  # "calc = new Calculator()" in LazyCalculator.LazyCalculator()
             1,  # "calc.add(a, b)" in LazyCalculator.add(int, int)
             0,  # ""Hello World"" in Hello
-            2,  # "System.out.println(f) in Hello.m()
+            1,  # "System.out.println(f) in Hello.m()
         ],
     )
