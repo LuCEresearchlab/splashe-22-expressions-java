@@ -44,8 +44,9 @@ def rq5(engine: Engine):
     pie(x=nodes_type.values(), labels=nodes_type.keys(), autopct="%1.0f%%")
     title(desc)
     print(desc)
-    print_nodes_table(sort_table(normalize(nodes_type)))
-    save_table_as_csv("RQ5.csv", normalize(nodes_type).items())
+    table = add_missing_node_types(sort_table(normalize(nodes_type)))
+    print_nodes_table(table)
+    save_table_as_csv("RQ5.csv", table)
 
 
 def rq6(engine: Engine):
@@ -60,12 +61,20 @@ def rq6(engine: Engine):
     xticks(idxs, labels)
     title(desc)
     print(desc)
-    print_nodes_table(sort_table(nodes_project_prevalence))
-    save_table_as_csv("RQ6.csv", nodes_project_prevalence.items())
+    table = add_missing_node_types(sort_table(nodes_project_prevalence))
+    print_nodes_table(table)
+    save_table_as_csv("RQ6.csv", table)
 
 
 def sort_table(d: dict[str, float]) -> list[tuple[str, float]]:
     return sorted(d.items(), key=itemgetter(1), reverse=True)
+
+
+def add_missing_node_types(table: list[tuple[str, float]]) -> list[tuple[str, float]]:
+    nodes = map(itemgetter(0), table)
+    all_nodes = ast_to_expr_construct.keys()
+    missing_nodes = filter(lambda n: n not in nodes, all_nodes)
+    return table + [(n, 0.0) for n in missing_nodes]
 
 
 def normalize(d: dict[str, int]) -> dict[str, float]:
@@ -75,7 +84,7 @@ def normalize(d: dict[str, int]) -> dict[str, float]:
 
 def print_nodes_table(items: list[tuple[str, float]]):
     for node, perc in items:
-        print(f"{ast_to_expr_construct(node):<25} {perc:.2f}")
+        print(f"{ast_to_expr_construct[node]:<25} {perc * 100:>6.2f}")
 
 
 def save_table_as_csv(filename: str, items: list[tuple[str, float]]):
