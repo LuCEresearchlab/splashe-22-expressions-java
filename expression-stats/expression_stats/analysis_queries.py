@@ -25,8 +25,9 @@ def nodes_per_expr(engine: Engine) -> list[int]:
     return info_per_expr(engine, func.count(column("path_expr")))
 
 
-def tree_height_per_expr(engine: Engine) -> list[int]:
-    return info_per_expr(engine, func.max(column("depth")))
+def tree_levels_per_expr(engine: Engine) -> list[int]:
+    depths = info_per_expr(engine, func.max(column("depth")))
+    return [d + 1 for d in depths]
 
 
 def is_method_declaration(declaring_node_path: str) -> bool:

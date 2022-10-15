@@ -3,7 +3,7 @@ import pytest
 from expression_stats.analysis_queries import (
     expr_nodes_per_method,
     perc_expr_tokens_per_project,
-    tree_height_per_expr,
+    tree_levels_per_expr,
     nodes_per_expr,
 )
 from sqlalchemy import create_engine
@@ -56,14 +56,14 @@ def test_nodes_per_expr(engine: Engine):
     )
 
 
-def test_tree_height_per_expr(engine: Engine):
+def test_tree_levels_per_expr(engine: Engine):
     equals_no_order(
-        tree_height_per_expr(engine),
+        tree_levels_per_expr(engine),
         [
-            1,  # "a + b" in Calculator.add(int, int)
-            1,  # "calc = new Calculator()" in LazyCalculator.LazyCalculator()
-            1,  # "calc.add(a, b)" in LazyCalculator.add(int, int)
-            0,  # ""Hello World"" in Hello
-            1,  # "System.out.println(f) in Hello.m()
+            2,  # "a + b" in Calculator.add(int, int)
+            2,  # "calc = new Calculator()" in LazyCalculator.LazyCalculator()
+            2,  # "calc.add(a, b)" in LazyCalculator.add(int, int)
+            1,  # ""Hello World"" in Hello
+            2,  # "System.out.println(f) in Hello.m()
         ],
     )

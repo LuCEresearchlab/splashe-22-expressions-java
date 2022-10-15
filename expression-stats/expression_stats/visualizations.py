@@ -8,7 +8,7 @@ from analysis_queries import (
     expr_nodes_per_type,
     nodes_per_expr,
     perc_expr_tokens_per_project,
-    tree_height_per_expr,
+    tree_levels_per_expr,
 )
 from expr_constructs import ast_to_expr_construct
 from matplotlib.pyplot import bar, figure, pie, savefig, title, xticks
@@ -21,15 +21,9 @@ def rq1_2_3_4(engine: Engine):
         perc_expr_tokens_per_project(engine),
         expr_nodes_per_method(engine),
         nodes_per_expr(engine),
-        tree_height_per_expr(engine),
+        tree_levels_per_expr(engine),
     ]
-    rqs = [
-        f"% of expression tokens per project",
-        f"# of expression AST nodes per method",
-        f"AST nodes per expression",
-        f'Tree height per expression ("0 based")',
-    ]
-    for idx, (values, rq) in enumerate(zip(rqs_values, rqs), start=1):
+    for idx, values in enumerate(rqs_values, start=1):
         figure()
         boxplot(y=values, showfliers=False).set_title(
             f"Median {median(values):.2f} - Average {mean(values):.2f}"
