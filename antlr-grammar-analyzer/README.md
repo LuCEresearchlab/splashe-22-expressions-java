@@ -74,5 +74,5 @@ Check whether a sample Java source fits within the grammar without expressions:
 - whether it does not contain rules outside the grammar
 
 ```sh
-./bazel-bin/fits-grammar-noexpr resources/AllRulesWithoutExpr.java
+./bazel-bin/fits-grammar-noexpr resources/C.java
 ```
