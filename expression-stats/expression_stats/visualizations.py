@@ -65,7 +65,7 @@ def sort_table(d: dict[str, float]) -> list[tuple[str, float]]:
 
 
 def add_missing_node_types(table: list[tuple[str, float]]) -> list[tuple[str, float]]:
-    nodes = map(itemgetter(0), table)
+    nodes = [entry[0] for entry in table]
     all_nodes = ast_to_expr_construct.keys()
     missing_nodes = filter(lambda n: n not in nodes, all_nodes)
     return table + [(n, 0.0) for n in missing_nodes]
