@@ -78,7 +78,7 @@ def normalize(d: dict[str, int]) -> dict[str, float]:
 
 def print_nodes_table(items: list[tuple[str, float]]):
     for node, perc in items:
-        print(f"{ast_to_expr_construct[node]:<25} {perc * 100:>6.2f}")
+        print(f"{ast_to_expr_construct[node]:<25} {perc * 100:>5.1f}")
 
 
 def save_table_as_csv(filename: str, items: list[tuple[str, float]]):
